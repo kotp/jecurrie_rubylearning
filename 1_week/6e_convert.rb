@@ -25,7 +25,7 @@
 # => -17.777777777777777777777778
 #
 def convert( fahrenheit )
-  puts format( "%.2f", ( fahrenheit - 32 )/ 1.8000 )
+  puts format( "%.2f", ( fahrenheit.to_f - 32 )/ 1.8000 )
 end
 
 convert( 32 ) #212 )
