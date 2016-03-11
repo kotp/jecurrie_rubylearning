@@ -1,7 +1,3 @@
-#method(number)
-
-#1x1 to 9x9
-
 =begin
 
 multiplication_table (integer, heading = '', decorate = false)
