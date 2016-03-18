@@ -1,9 +1,8 @@
-def split_into_sentences(str)
+def split_into_sentences(text)
   elements = str.split("\n")
-  #n = 1
+  
   for i in 0..2 #n
     puts "Line " +  (i+1).to_s + ": " + elements[i].to_s
-    #n = n + 1
   end
 
 end
