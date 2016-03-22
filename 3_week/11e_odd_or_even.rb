@@ -4,8 +4,8 @@ collection.each do |collection|
 	print "The number #{collection} and it is "
 	#puts collection % 2
 	if (collection % 2 == 0)
-	  "even."
+	  puts "even."
 	else
-	  "odd."
+	  puts "odd."
 	end  	
 end	
