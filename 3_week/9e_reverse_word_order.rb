@@ -1,5 +1,5 @@
-#Have to clean up variable names.
-str = "Welcome to the forum.\nHere you can learn Ruby.\nAlong with other members.\n"
+print "String "
+str = gets #.chomp 
 
 elements = str.split("\n")
 
@@ -15,5 +15,6 @@ e0.each do |i|
   st = i.reverse
   strg = strg + " " + st.to_s
 end
-puts strg
+puts strg.reverse
+
 
