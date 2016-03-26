@@ -1,20 +1,24 @@
-print "String "
-str = gets #.chomp 
+def reverse_word_order(a_string)
 
-elements = str.split("\n")
+  array_elements = a_string.split("\n")
 
-elements.each do |i|
-  i
+  array_elements.each do |i|
+    i
+  end
+
+  e0 = a_string.split(" ")
+  strg = ""
+
+  e0.each do |i|
+    st = i.reverse
+    strg = strg + " " + st.to_s
+  end
+  puts strg.reverse
+
 end
 
-strg = ""
+strng = "Welcome to the forum.\nHere you can learn Ruby.\nAlong with other members.\n"
+reverse_word_order(strng)
 
-e0 = str.split(" ")
-
-e0.each do |i|
-  st = i.reverse
-  strg = strg + " " + st.to_s
-end
-puts strg.reverse
 
 
