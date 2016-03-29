@@ -1,17 +1,25 @@
+gem "minitest"
+require "minitest/autorun"
+
 def reverse_word_order(a_string)
-  elements = a_string.split("\n")
-  elements = a_string.split(" ")
+  puts elements = a_string.split("\n")
+  puts "a\n"
+  puts elements = a_string.split(" ")
+  puts "b\n"
+  puts elements.class
 
   result = ""
 
   elements.each do |i|
     result = result + " " + i.reverse  #.to_s
   end
-  result.reverse
+  #puts result.class
+  puts result.reverse
+
 end
 
-strng = "A b c d.\nE f g h.\n" #Welcome to the forum.\nHere you can learn Ruby.\nAlong with other members.\n"
-puts reverse_word_order(strng)
+strng = ".the .end .of .times" #times. of. end. the." #hello world" #Welcome to the forum.\nHere you can learn Ruby.\nAlong with other members.\n"
+reverse_word_order(strng)
 
 gem 'RLCoreKickstart'
 require 'rlcorekickstart/evaluate_me'
