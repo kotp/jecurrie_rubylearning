@@ -1,30 +1,40 @@
-gem "minitest"
-require "minitest/autorun"
-
 def reverse_word_order(a_string)
-  puts elements = a_string.split("\n")
-  puts "a\n"
-  puts elements = a_string.split(" ")
-  puts "b\n"
-  puts elements.class
-
-  result = ""
-
+  elements = a_string.split("\n") # useless assignment, leave the rest, delete
+                                  # up to and including the equals sign
+  elements = a_string.split(' ')
+  result = ''
+  j = 0
   elements.each do |i|
-    result = result + " " + i.reverse  #.to_s
+    if j == 0
+      result += i.reverse
+      j += 1 # Move `j += 1` out of the conditional.
+    else
+      result = result + ' ' + i.reverse # .to_s
+      j += 1 # Move `j += 1` out of the conditional.
+    end
   end
-  #puts result.class
-  puts result.reverse
+  result.reverse
+end
+
+if __FILE__ == $PROGRAM_NAME
+  strng = 'Hello World'
+  reverse_word_order(strng)
+  strng = '.the .end .of .times'
+  reverse_word_order(strng)
+  strng = 'hello world'
+  reverse_word_order(strng)
+
+  # This line starts the automated testing block
+  gem 'RLCoreKickstart'
+  require 'rlcorekickstart/evaluate_me'
+  include EvaluateMe
+  instance_eval(EVALUATE)
+  # This line ends the automated testing block
 
 end
 
-strng = ".the .end .of .times" #times. of. end. the." #hello world" #Welcome to the forum.\nHere you can learn Ruby.\nAlong with other members.\n"
-reverse_word_order(strng)
-
-gem 'RLCoreKickstart'
-require 'rlcorekickstart/evaluate_me'
-include EvaluateMe
-eval(EVALUATE)
+# From here to the end of the file is the content
+# for the automated testing block. Do not remove or alter
 __END__
 ZGVzY3JpYmUgJ3JldmVyc2Vfd29yZF9vcmRlcicgZG8KICBpdCAnbXVzdCBy
 ZXZlcnNlIHRoZSB3b3JkIG9yZGVyJyBkbwogICAgc3RyaW5nID0gJ2hlbGxv
