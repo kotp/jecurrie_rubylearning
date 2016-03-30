@@ -28,7 +28,7 @@ def age_in_seconds(seconds)
   remaining_seconds = seconds - years * SECONDS_PER_YEAR
   months = remaining_seconds / SECONDS_PER_MONTH
   # Compose the resultant string...
-  puts sprintf("I'm %2d years and %2d months old.",  years, months)
+  sprintf("I'm %2d years and %2d months old.",  years, months)
 end
 
 puts age_in_seconds 979000000 #31536000 
