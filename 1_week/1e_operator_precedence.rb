@@ -11,6 +11,6 @@ x = y or z
 # Therefore x = false
 puts x    # x = false  
 (x = y) or z
-puts x    # x = false
+puts x    # x = true
 x = (y or z)
 puts x    # x = true 
