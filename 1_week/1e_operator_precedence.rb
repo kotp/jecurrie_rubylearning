@@ -4,10 +4,13 @@ x = y or z
 #x = (y=false) or (z = true)
 # =  Assignment
 # or Logical composition
-
-#x =  Assignment (y=false)  or Logical composition (z = true)
-puts x 
+# Assignment has greater operator precedence than logical composition.
+# Therefore do assignment first, then logical compostion.
+#x =(y=false)  or (z = true)
+# false or true
+# Therefore x = false
+puts x    # x = false  
 (x = y) or z
-puts x 
+puts x    # x = false
 x = (y or z)
-puts x
+puts x    # x = true 
