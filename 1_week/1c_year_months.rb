@@ -20,7 +20,7 @@ SECONDS_PER_MONTH = 60 * 60 * 24 * 30
 
 # Convert an age in seconds to a string
 # describing the approximate age in years and months.
-def age_in_seconds(seconds)
+def age_in_years_and_months(seconds)
   # Calculate years
   years = seconds / SECONDS_PER_YEAR
   #puts years 
@@ -31,9 +31,9 @@ def age_in_seconds(seconds)
   sprintf("I'm %2d years and %2d months old.",  years, months)
 end
 
-puts age_in_seconds 979000000 #31536000 
+puts age_in_years_and_months 979000000 #31536000 
 
-puts age_in_seconds 2158493738 #34128000
-puts age_in_seconds 246144023
-puts age_in_seconds 1270166272
-puts age_in_seconds 1025600095
+puts age_in_years_and_months 2158493738 #34128000
+puts age_in_years_and_months 246144023
+puts age_in_years_and_months 1270166272
+puts age_in_years_and_months 1025600095
