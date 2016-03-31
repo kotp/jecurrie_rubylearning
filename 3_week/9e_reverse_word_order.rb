@@ -1,41 +1,35 @@
-gem "minitest"
-require "minitest/autorun"
+# Truncate the value to whole seconds.
+SECONDS_PER_YEAR = 60 * 60 * 24 * 365  #31_536_000
+# Number of seconds in a (30 day) month.
+SECONDS_PER_MONTH = 60 * 60 * 24 * 30  #2_592_000
 
-def reverse_word_order(a_string)
-  puts elements = a_string.split("\n")
-  puts "a\n"
-  puts elements = a_string.split(" ")
-  puts "b\n"
-  puts elements.class
-
-  result = ""
-
-  elements.each do |i|
-    result = result + " " + i.reverse  #.to_s
-  end
-  #puts result.class
-  puts result.reverse
-
+# Convert an age in seconds to a string
+# describing the approximate age in years and months.
+def age_in_years_and_months(seconds)
+  sprintf("I'm %2d years and %2d months old.",  seconds / SECONDS_PER_YEAR, (seconds % SECONDS_PER_YEAR) / SECONDS_PER_MONTH )
+end
+=begin
+def age_in_years_and_months(seconds)
+[ #This is an array: it holds the value for years and for months.
+  seconds / SECONDS_PER_YEAR
+  (seconds % SECONDS_PER_YEAR) / SECONDS_PER_MONTH 
+]
 end
 
-strng = ".the .end .of .times" #times. of. end. the." #hello world" #Welcome to the forum.\nHere you can learn Ruby.\nAlong with other members.\n"
-reverse_word_order(strng)
+report = "I'm %2d years and %2d months old."
+#                    *splat
+puts sprintf report, *age_in_years_and_months(979000000) 
+puts sprintf report, *age_in_years_and_months(2158493738) 
+puts sprintf report, *age_in_years_and_months(246144023) 
+puts sprintf report, *age_in_years_and_months(270166272) 
+puts sprintf report, *age_in_years_and_months(1025600095) 
+=end	
 
-gem 'RLCoreKickstart'
-require 'rlcorekickstart/evaluate_me'
-include EvaluateMe
-eval(EVALUATE)
-__END__
-ZGVzY3JpYmUgJ3JldmVyc2Vfd29yZF9vcmRlcicgZG8KICBpdCAnbXVzdCBy
-ZXZlcnNlIHRoZSB3b3JkIG9yZGVyJyBkbwogICAgc3RyaW5nID0gJ2hlbGxv
-IHdvcmxkJwogICAgcmV2ZXJzZV93b3JkX29yZGVyKHN0cmluZykubXVzdF9l
-cXVhbCAnd29ybGQgaGVsbG8nCiAgZW5kCgogIGl0ICdtdXN0IG5vdCBjaGFu
-Z2UgdGhlIGNhc2UnIGRvCiAgICBzdHJpbmcgPSAnSGVsbG8gV29ybGQnCiAg
-ICByZXZlcnNlX3dvcmRfb3JkZXIoc3RyaW5nKS5tdXN0X2VxdWFsICdXb3Js
-ZCBIZWxsbycKICBlbmQKCiAgaXQgJ211c3Qgbm90IHJldmVyc2UgdGhlIGxl
-dHRlcnMgaW4gdGhlIHdvcmQnIGRvCiAgICBzdHJpbmcgPSAnYWJjZGVmZycK
-ICAgIHJldmVyc2Vfd29yZF9vcmRlcihzdHJpbmcpLndvbnRfZXF1YWwgJ2dm
-ZWRjYmEnCiAgZW5kCgogIGl0ICdtdXN0IG5vdCBjaGFuZ2UgZHJvcCBwdW5j
-dHVhdGlvbicgZG8KICAgIHN0cmluZyA9ICd0aGUuIGVuZC4gb2YuIHRpbWVz
-LicKICAgIHJldmVyc2Vfd29yZF9vcmRlcihzdHJpbmcpLm11c3RfZXF1YWwg
-J3RpbWVzLiBvZi4gZW5kLiB0aGUuJwogIGVuZAplbmQK
+	
+end
+
+puts age_in_years_and_months 979000000 
+puts age_in_years_and_months 2158493738
+puts age_in_years_and_months 246144023
+puts age_in_years_and_months 1270166272
+puts age_in_years_and_months 1025600095
