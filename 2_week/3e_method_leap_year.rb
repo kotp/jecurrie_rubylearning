@@ -4,22 +4,29 @@
 #remainder.
 
 def leap_year?(year)
-   (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)
+  (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)
+  #return year 
 end	
 
-#=begin
-puts leap_year?(1)
-puts leap_year?(2)
-puts leap_year?(3)
-puts leap_year?(4)
-puts leap_year?(8)
-puts leap_year?(96)
-puts leap_year?(2016)
-puts leap_year?(2020)
-=begin
+def is_or_not(boolean)
+  if boolean
+  	'is'
+  else
+    'is not'
+  end  	
+end	
 
-puts leap_year?(400)
-puts leap_year?(5)
-puts leap_year?(8)
-puts leap_year?(9)
+collection_of_years = [ 0,1, 2, 3, 4, 1900, 1901, 1996, 2000, 2004, 2005 ]
+
+collection_of_years.each do |y|
+
+  puts "The year #{y} #{is_or_not(leap_year?(y))} a leap year."
+=begin
+  print "The year " + y.to_s + " is "
+  if leap_year?(y)
+    puts "a leap year."
+  else
+    puts "not a leap year."
+  end    	
 =end
+end
